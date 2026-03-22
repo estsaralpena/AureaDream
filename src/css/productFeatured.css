@@ -1,0 +1,128 @@
+.content__allFeatured-aureaDream {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: var(--space-10);
+  padding: var(--space-6) var(--space-16);
+
+  .content-introductionFeatured-aureaDream {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .bx-introduction {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+
+      .txt {
+        font-size: var(--font-size-lg);
+        letter-spacing: var(--letter-spacing-wide);
+      }
+    }
+
+    .showMore {
+      position: relative;
+      color: var(--ColorBrowmBlack);
+      font-weight: 600;
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: var(--ColorBrowmBlack);
+        border-radius: 999px;
+        bottom: -1px;
+      }
+    }
+  }
+
+  .content__ProductFeatured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-16);
+
+    .contain_columnProductFeatured {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+
+      .bx-contentImage-productFeatured {
+        width: 100%;
+        height: 400px;
+        border-radius: var(--radius-2xl);
+        overflow: hidden;
+        box-shadow: var(--shadow-xl);
+
+        .productFeatured {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: var(--transition-slow);
+          cursor: pointer;
+
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+
+      .bx-infoProductFeatured {
+        width: 100%;
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: var(--space-4);
+
+        .infoProductFeatured {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-3);
+
+          .titleProductFeatured {
+            font-size: var(--font-size-lg);
+          }
+          .txt {
+            font-size: var(--font-size-sm);
+            line-height: var(--line-height-tight);
+            letter-spacing: var(--letter-spacing-wide);
+            color: var(--ColorGray);
+          }
+        }
+
+        .content-btnExplorerMore {
+          width: fit-content;
+          color: var(--ColorBrowmBlack);
+          display: flex;
+          align-items: center;
+          gap: var(--space-1);
+
+          .explorer {
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-slow);
+          }
+
+          .bxf {
+            display: flex;
+            align-items: center;
+            transition: var(--transition-slow);
+          }
+
+          &:hover {
+            color: var(--ColorBlack);
+
+            .bxf {
+              transform: translateX(4px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

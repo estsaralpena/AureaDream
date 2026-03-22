@@ -1,0 +1,319 @@
+.content__allRoutines {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1.2fr 1.2fr 0.8fr;
+  grid-template-rows: repeat(3, 1.1fr) repeat(3, 0.9fr);
+  gap: var(--space-8);
+  padding: 5.8rem 4rem 1rem 4rem;
+
+  .section1 {
+    position: relative;
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+
+    background: var(--gradient-1);
+    border-radius: var(--radius-xl);
+    display: flex;
+    user-select: none;
+
+    .content_InfoRoutinesIntroduction {
+      width: 75%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 0 2rem 2rem;
+      justify-content: space-between;
+
+      .bx-infoRoutines {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+
+        .titlRoutines {
+          font-size: var(--font-size-6xl);
+          font-family: var(--ftGoldman);
+          font-weight: lighter;
+          letter-spacing: 1px;
+        }
+
+        .txt {
+          font-size: var(--font-size-lg);
+          width: 45ch;
+        }
+      }
+
+      .bx-btnRoutines {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        padding: 12px 32px;
+        background-color: var(--color-bg);
+        border-radius: 999px;
+        margin-top: var(--spacing-32);
+        cursor: pointer;
+        transition: var(--transition-fast);
+
+        .linkRoutines {
+          color: var(--ColorBlack);
+        }
+
+        .bx-iconArrow {
+          display: flex;
+          transition: var(--transition-fast);
+        }
+
+        &:hover {
+          background-color: var(--ColorSoftGrayLigther);
+
+          .bx-iconArrow {
+            transform: translateX(4px);
+          }
+        }
+      }
+    }
+
+    .bx-imageModelRoutines {
+      width: 35%;
+      height: 100%;
+      overflow: hidden;
+
+      .modelRoutines {
+        width: 102%;
+        height: 102%;
+        object-fit: cover;
+        object-position: right;
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+
+    .content-infoCustomers {
+      position: absolute;
+      width: fit-content;
+      padding: 12px 32px;
+      background-color: transparent;
+      backdrop-filter: blur(8px);
+      border: 2px solid hsl(0, 0%, 100%, 75%);
+      color: white;
+      text-shadow: 0px 0px 1px black;
+      border-radius: 999px;
+      bottom: 2rem;
+      right: 2rem;
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+
+      .bx-txt-Customers {
+        font-family: var(--ftGoldman) !important;
+      }
+
+      &:hover {
+        background-color: hsl(0, 0%, 13%, 5%);
+      }
+    }
+  }
+
+  .routine-card {
+    position: relative;
+    grid-column: span 1 / span 1;
+    grid-row: span 3 / span 3;
+    border-radius: var(--border-radius-14);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-bg);
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -5rem;
+      left: -5rem;
+      width: 100px;
+      height: 100px;
+      border-radius: 999px;
+      background-color: rgba(0, 0, 0, 0.5);
+      transition: var(--transition-fast);
+      backdrop-filter: blur(3px);
+    }
+
+    &:hover {
+      &::before {
+        width: 700px;
+        height: 700px;
+        left: -7rem;
+        bottom: -7rem;
+      }
+      .bx-contentInfoPersonalizedRoutines {
+        transform: translateY(-30%);
+      }
+      .bx-btn-icon {
+        transform: translateY(0);
+      }
+    }
+
+    .bx-contentInfoPersonalizedRoutines {
+      transform: translateY(60%);
+      transition: var(--transition-fast);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+
+      .titlePersonalizedRoutines {
+        font-size: var(--font-size-2xl);
+        color: var(--ColorBrowm);
+      }
+    }
+
+    .bx-btn-icon {
+      position: relative;
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 120px;
+      height: 30px;
+      border-radius: var(--radius-sm);
+      gap: var(--space-2);
+      background-color: var(--color-bg);
+      transform: translateY(250%);
+      transition: var(--transition-fast);
+
+      .bx-txtExplorer {
+        font-family: var(--ftKanit) !important;
+        color: var(--ColorBlack);
+        transition: var(--transition-fast);
+      }
+
+      .bx-iconArrow {
+        display: flex;
+        align-items: center;
+        color: var(--ColorBlack);
+        transition: var(--transition-fast);
+      }
+
+      &:hover {
+        background-color: var(--ColorBrowm);
+        .bx-iconArrow {
+          transform: translateX(4px);
+        }
+      }
+    }
+  }
+
+  .section2 {
+    grid-row-start: 4;
+    background: url(../../public/images/ModeloCustomersImage.jpg) center
+      no-repeat;
+    background-size: cover;
+    border-radius: var(--radius-xl);
+  }
+
+  .section3 {
+    grid-column-start: 2;
+    grid-row-start: 4;
+    background: url(../../public/images/ProductoSkinCare.webp) center no-repeat;
+    background-size: cover;
+    border-radius: var(--radius-xl);
+  }
+
+  .section4 {
+    grid-column: span 1 / span 1;
+    grid-row: span 3 / span 3;
+    grid-column-start: 3;
+    grid-row-start: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    user-select: none;
+    gap: var(--space-8);
+
+    .bx-imgWomen {
+      width: 100%;
+      height: 140px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      flex: 1;
+
+      .imgWomen {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        user-select: none;
+        pointer-events: none;
+      }
+    }
+
+    .bx-contentInfoAdicesRoutines {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+
+      .bx-contentInfoPersonalizedRoutines {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-2);
+
+        .titleAdvices {
+          color: var(--ColorBlack);
+          font-size: var(--font-size-lg);
+        }
+
+        .txt {
+          color: var(--ColorGray);
+          font-size: var(--font-size-14);
+          font-weight: 300;
+        }
+      }
+
+      .bx-contentEmailRoutines {
+        display: flex;
+        height: 35px;
+
+        .emailRoutines {
+          width: 100%;
+          border-radius: 999px;
+          border: 2px solid var(--ColorBrowm);
+          text-indent: 1rem;
+          outline: none;
+          color: var(--ColorGray);
+          font-size: var(--font-size-sm);
+        }
+
+        .bx-btnSendRoutines {
+          width: 60%;
+
+          button[type="submit"] {
+            width: 100%;
+            height: 100%;
+            border-radius: 999px;
+            border: transparent;
+            color: var(--color-bg);
+            font-size: var(--font-size-sm);
+            cursor: pointer;
+            background-color: var(--ColorBrowm);
+            transition: 0.3s ease-in-out;
+            border: 2px solid var(--ColorBrowm);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            letter-spacing: 1px;
+
+            &:hover {
+              background-color: var(--ColorBrowmBlack);
+              color: var(--ColorBlack);
+            }
+          }
+        }
+      }
+    }
+  }
+}
