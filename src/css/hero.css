@@ -9,6 +9,8 @@
   height: 70px;
   padding: 0 var(--space-16);
   z-index: 12;
+  transition: var(--transition-slow);
+  transform: translateY(0);
 
   .bx-logo-and-navbar {
     display: flex;
@@ -124,6 +126,10 @@
       }
     }
   }
+}
+
+.contentHeader-sectionHero-aureaDream.header-hidden {
+  transform: translateY(-100%);
 }
 
 /*HERO SECTION - HERO*/
@@ -242,7 +248,7 @@
 
     &:hover {
       &::before {
-        animation: moveToOut 2s infinite ease-in-out;
+        animation: moveToOut 1.2s infinite ease-in-out;
       }
     }
   }

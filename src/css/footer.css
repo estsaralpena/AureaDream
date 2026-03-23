@@ -1,0 +1,128 @@
+.content_allFooterSection-aureaDream {
+  width: 100%;
+  height: 100%;
+  padding: 2rem var(--space-16);
+
+  .footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+
+    .footer-top {
+      display: flex;
+      gap: var(--space-20);
+
+      .footer-brand {
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-4);
+
+        .footer-brand-logo {
+          display: flex;
+          align-items: center;
+          gap: var(--space-8);
+
+          .bx-logo {
+            width: 60px;
+            height: 60px;
+          }
+          .footer-brand-name {
+            font-size: var(--font-size-2xl);
+            font-family: var(--ftGoldman);
+            font-weight: 500;
+          }
+        }
+
+        .footer-brand-desc {
+          font-size: var(--font-size-lg);
+          width: 23ch;
+          color: var(--ColorGray);
+        }
+
+        .footer-brand-icons {
+          display: flex;
+          width: fit-content;
+          align-items: center;
+          gap: var(--space-8);
+          margin-top: var(--space-4);
+
+          .iconsSocial {
+            .bxf {
+              font-size: var(--font-size-2xl);
+              color: var(--ColorGray);
+              transition: var(--transition-base);
+
+              &:hover {
+                color: var(--ColorBrowmBlack);
+              }
+            }
+          }
+        }
+      }
+
+      .footer-nav {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+        .footer-nav-column {
+          display: flex;
+          flex-direction: column;
+          gap: var(--space-4);
+
+          .footer-nav-title {
+            font-size: var(--font-size-xl);
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+
+          .footer-nav-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-2);
+
+            .footer-nav-item {
+              .linksNavbarFooter {
+                transition: var(--transition-base);
+
+                &:hover {
+                  color: var(--ColorGray);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .footer-line {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background-color: var(--ColorSoftGray);
+      border-radius: 999px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: end;
+
+      .footer-policy {
+        display: flex;
+        align-items: center;
+        gap: var(--space-20);
+
+        .policyItems-footerBottom {
+          .linksPolicy-footerBottom {
+            text-transform: uppercase;
+            transition: var(--transition-base);
+
+            &:hover {
+              color: var(--ColorGray);
+            }
+          }
+        }
+      }
+    }
+  }
+}

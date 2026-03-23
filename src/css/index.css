@@ -3,10 +3,12 @@
 @import url(/src/css/productFeatured.css);
 @import url(/src/css/sellingProduct.css);
 @import url(/src/css/routines.css);
+@import url(/src/css/footer.css);
 
 :root {
   /* ===== Colores ===== */
   --ColorBlack: #1e1b18;
+  --ColorSoftBlack: #2e2b28;
   --ColorGray: #6f6f6f;
   --ColorSoftGray: #e5e5e5;
   --ColorSoftGrayLigther: #f2f2f2;
@@ -15,6 +17,7 @@
   --ColorYellow: #fffd98;
   --ColorRed: #ff3e41;
   --ColorBrowm: #d4c6b4;
+  --ColorSoftBrowm: #faebd8c5;
   --ColorBrowmBlack: #ad9474;
 
   /* Colores semánticos */
@@ -132,9 +135,18 @@
   font-family: var(--ftKanit);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100%;
   background-color: var(--color-bg);
+}
+
+.activeBgHeaderPage {
+  background-color: var(--color-bg);
+  box-shadow: var(--shadow-lg);
 }
 
 .txtGradient {
@@ -176,4 +188,77 @@ body {
 
 .titleSecond {
   font-size: var(--font-size-3xl);
+}
+
+.content__allJoinAureaCircle {
+  width: 100%;
+  height: 70vh;
+  background-color: var(--ColorSoftBrowm);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: var(--space-16);
+  gap: var(--space-6);
+
+  .bx-introductionInfo-joinAureaCircle {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    text-align: center;
+
+    .titleSecond {
+      font-size: var(--font-size-4xl);
+      font-family: var(--ftGoldman);
+    }
+
+    .txt {
+      font-size: var(--font-size-xl);
+    }
+  }
+
+  .bx-inputsJoinAureaCircle {
+    display: flex;
+    align-items: center;
+    gap: var(--space-1);
+
+    #inputJoinAureaDream {
+      background-color: var(--color-bg);
+      width: 390px;
+      height: 45px;
+      border-radius: 999px;
+      text-indent: 1rem;
+    }
+
+    .bx-btnJoinAureaDream {
+      width: 120px;
+      height: 45px;
+      background-color: var(--ColorBlack);
+      border-radius: 999px;
+      color: var(--color-bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: var(--transition-base);
+
+      .bx-inputsJoinAureaCircle {
+        font-size: var(--font-size-sm);
+        text-transform: uppercase;
+        font-family: var(--ftKanit) !important;
+        cursor: pointer;
+      }
+
+      &:hover {
+        background-color: var(--ColorSoftBlack);
+      }
+    }
+  }
+
+  .txtSubscript {
+    font-size: var(--font-size-xs);
+    letter-spacing: 0.3px;
+    color: var(--ColorGray);
+  }
 }

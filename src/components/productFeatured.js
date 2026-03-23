@@ -48,8 +48,5 @@ function crearTarjeta(producto) {
   `;
 }
 
-// Lo renderizamos
-document.addEventListener("DOMContentLoaded", () => {
-  const contenedor = document.querySelector(".content__ProductFeatured");
-  contenedor.innerHTML = productos.map(crearTarjeta).join("");
-});
+const contenedor = document.querySelector(".content__ProductFeatured");
+if (contenedor) contenedor.innerHTML = productos.map(crearTarjeta).join("");

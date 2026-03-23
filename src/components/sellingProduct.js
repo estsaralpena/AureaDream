@@ -63,10 +63,5 @@ function crearTarjeta(productos) {
     `;
 }
 
-// Renderizamos
-document.addEventListener("DOMContentLoaded", () => {
-  const contenedor = document.querySelector(
-    ".content__cardsProductsMoreShopping",
-  );
-  contenedor.innerHTML = productos.map(crearTarjeta).join("");
-});
+const contenedor = document.querySelector(".content__cardsProductsMoreShopping");
+if (contenedor) contenedor.innerHTML = productos.map(crearTarjeta).join("");
