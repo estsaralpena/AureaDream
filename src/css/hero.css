@@ -296,6 +296,10 @@
           font-size: 1.3rem;
         }
       }
+
+      .navbarPage-aureaDreamMobile.activeNavbarHeader {
+        display: none !important;
+      }
     }
 
     .bx-search-btnsPage-aureaDream.activeSearchBox {
