@@ -78,5 +78,7 @@ function renderizarFooter() {
   `;
 }
 
-const contenedor = document.querySelector(".content_allFooterSection-aureaDream");
+const contenedor = document.querySelector(
+  ".content_allFooterSection-aureaDream",
+);
 if (contenedor) contenedor.innerHTML = renderizarFooter();
