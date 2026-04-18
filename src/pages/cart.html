@@ -4,6 +4,139 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="../css/index.css">
   </head>
-  <body></body>
+  <body>
+
+    <main class="content__cart-aureaDream">
+      <h2 class="titleSecond txtGradient2">Tu Carrito</h2>
+
+      <div class="cart-container">
+
+        <!-- PRODUCTOS -->
+        <div class="cart-items">
+
+          <div class="cart-item">
+            <img src="../../public/images/40000279_hidraloe_crema_facial_h.webp" class="cart-img" />
+
+            <div class="cart-info">
+              <h4>Revitalizing Serum</h4>
+              <span>30ml | Complejo Anti-Edad</span>
+
+              <div class="cart-quantity">
+                <button class="btn-minus">-</button>
+                <span class="quantity">1</span>
+                <button class="btn-plus">+</button>
+              </div>
+            </div>
+
+            <div class="cart-price">
+              <span>$85.00</span>
+              <button class="btn-delete">🗑</button>
+            </div>
+          </div>
+
+          <div class="cart-item">
+            <img src="../../public/images/antiedadFeatured.webp" class="cart-img" />
+
+            <div class="cart-info">
+              <h4>Hydrating Cleanser</h4>
+              <span>200ml | Fórmula Suave</span>
+
+              <div class="cart-quantity">
+                <button class="btn-minus">-</button>
+                <span class="quantity">2</span>
+                <button class="btn-plus">+</button>
+              </div>
+            </div>
+
+            <div class="cart-price">
+              <span>$84.00</span>
+              <button class="btn-delete">🗑</button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- RESUMEN -->
+        <aside class="cart-summary">
+          <h3>Resumen del Pedido</h3>
+
+          <div class="summary-line">
+            <span>Subtotal</span>
+            <span id="subtotal">$0.00</span>
+          </div>
+
+          <div class="summary-line">
+            <span>Envío</span>
+            <span class="free">Gratis</span>
+          </div>
+
+          <div class="summary-line">
+            <span>Impuestos</span>
+            <span id="tax">$0.00</span>
+          </div>
+
+          <div class="summary-total">
+            <span>Total</span>
+            <span id="total">$0.00</span>
+          </div>
+
+          <button class="btn-primary">Finalizar Compra</button>
+          <button class="btn-secondary">Continuar Comprando</button>
+        </aside>
+
+      </div>
+    </main>
+
+    <!-- SCRIPT -->
+    <script>
+      const TAX_RATE = 0.08;
+
+      function updateCart() {
+        let subtotal = 0;
+
+        document.querySelectorAll(".cart-item").forEach(item => {
+          const price = parseFloat(item.querySelector(".cart-price span").innerText.replace("$",""));
+          const qty = parseInt(item.querySelector(".quantity").innerText);
+
+          subtotal += price * qty;
+        });
+
+        const tax = subtotal * TAX_RATE;
+        const total = subtotal + tax;
+
+        document.getElementById("subtotal").innerText = "$" + subtotal.toFixed(2);
+        document.getElementById("tax").innerText = "$" + tax.toFixed(2);
+        document.getElementById("total").innerText = "$" + total.toFixed(2);
+      }
+
+      document.querySelectorAll(".btn-plus").forEach(btn => {
+        btn.addEventListener("click", () => {
+          let qty = btn.parentElement.querySelector(".quantity");
+          qty.innerText = parseInt(qty.innerText) + 1;
+          updateCart();
+        });
+      });
+
+      document.querySelectorAll(".btn-minus").forEach(btn => {
+        btn.addEventListener("click", () => {
+          let qty = btn.parentElement.querySelector(".quantity");
+          if (qty.innerText > 1) {
+            qty.innerText = parseInt(qty.innerText) - 1;
+            updateCart();
+          }
+        });
+      });
+
+      document.querySelectorAll(".btn-delete").forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.closest(".cart-item").remove();
+          updateCart();
+        });
+      });
+
+      updateCart();
+    </script>
+  </body>
 </html>
